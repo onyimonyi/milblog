@@ -1,0 +1,667 @@
+// ----------------------------------------------------------------------
+// Base
+// ----------------------------------------------------------------------
+@import "globals/base";
+@import "globals/base/colors";
+// ----------------------------------------------------------------------
+// Layout
+// ----------------------------------------------------------------------
+@import "globals/layout";
+// ----------------------------------------------------------------------
+// Modules
+// ----------------------------------------------------------------------
+@import "globals/elements/buttons";
+@import "globals/elements/playlist";
+@import "globals/elements/footer";
+@import "globals/elements/header";
+@import "globals/elements/lists";
+@import "globals/elements/nav";
+@import "globals/elements/page-banner";
+@import "globals/elements/parallax-image";
+@import "globals/elements/social";
+@import "globals/elements/dropdown-nav";
+@import "globals/elements/top-button";
+// ----------------------------------------------------------------------
+// project scss
+// ----------------------------------------------------------------------
+//@import 'leader-blocks';
+// ----------------------------------------------------------------------
+// local style
+// ----------------------------------------------------------------------
+@import "army-strategy-mixins";
+@import "army-strategy-variables";
+
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+// Individual Sections Below
+#army-mission {
+  background-color: map-get($army-branding, gold);
+
+  .row {
+    .our-mission {
+      @include breakpoints(really_big large desktop sm_desktop) {
+        @include span(10);
+        @include offset(1);
+      }
+      @include breakpoints(lg_tablet tablet nav mobile) {
+        @include span(12);
+      }
+      h5,
+      h6,
+      p {
+        text-align: center;
+      }
+
+      h5 {
+        margin: 15px 0;
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 19px;
+      }
+    }
+
+    .stars {
+      @include span(12);
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    &.second {
+      & > h6 {
+        margin-left: 15px;
+      }
+
+      .left,
+      .right {
+        margin-top: 20px;
+        @include breakpoints(lg_tablet tablet nav mobile) {
+          @include span(12);
+        }
+      }
+
+      .left {
+        @include breakpoints(really_big large desktop sm_desktop) {
+          @include span(5);
+        }
+        h4 {
+          margin-top: 5px;
+          font-weight: 700;
+          font-family: "Overpass", sans-serif;
+          font-size: 50px;
+          line-height: 1;
+          text-align: left;
+
+          &::after {
+            background-color: #fff;
+            margin: 40px 0 0;
+            height: 9px;
+            width: 110px;
+          }
+
+          @include breakpoints(lg_tablet tablet nav mobile) {
+            text-align: left;
+          }
+          @include breakpoints(mobile) {
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+      .right {
+        @include breakpoints(really_big large desktop sm_desktop) {
+          @include span(7);
+        }
+
+        p {
+          font-size: 19px;
+          a {
+            i {
+              &.fa {
+                padding-left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#army-csa-quote {
+  background-color: map-get($army-branding, grey10);
+  color: $quote-text;
+
+  @each $img in $quote_bg {
+    $i: index($quote_bg, $img);
+    @include quotes($i) {
+      background: url($img) no-repeat center/cover;
+    }
+  }
+
+  .container {
+    @include breakpoints(really_big large desktop sm_desktop) {
+      margin: 70px auto;
+    }
+    @include breakpoints(lg_tablet tablet nav mobile) {
+      margin: 30px auto;
+    }
+    .row {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+
+        @include breakpoints(really_big large desktop sm_desktop) {
+          background: url(/e2/images/rv7/about/graphics/quote_marks_icon.svg);
+          height: 79px;
+          width: 98px;
+          left: 5%;
+        }
+        @include breakpoints(lg_tablet tablet) {
+          background: url(/e2/images/rv7/about/graphics/quote_marks_icon_responsive.svg);
+          height: 65px;
+          width: 79px;
+          left: 15px;
+        }
+        @include breakpoints(nav mobile) {
+          background: url(/e2/images/rv7/about/graphics/quote_marks_icon_responsive.svg);
+          height: 45px;
+          width: 55px;
+          left: 15px;
+        }
+      }
+      .quote {
+        border-left: 1px solid $quote-text;
+        padding-left: 2.5rem;
+
+        h3 {
+          text-transform: none;
+          font-size: 3.625em;
+          font-family: "Overpass", sans-serif;
+          font-weight: 600;
+        }
+        .four-stars {
+          margin: 15px 0 25px;
+        }
+        h6 {
+          font-size: 1.125em;
+          margin-bottom: 15px;
+          br {
+            display: none;
+          }
+        }
+        p {
+          color: #000;
+          font-size: 1.125em;
+        }
+        a {
+          text-decoration: none;
+          font-weight: 400;
+          color: $input-focus;
+          border-bottom: 1px solid #ccc;
+          &:hover,
+          &:focus,
+          &:active {
+            text-decoration: none;
+            color: $input-focus-dark;
+            border-bottom-color: $input-focus-dark;
+          }
+        }
+
+        @include breakpoints(really_big large desktop sm_desktop lg_tablet tablet nav) {
+          @include span(10);
+          @include offset(2);
+        }
+        @include breakpoints(lg_tablet tablet nav mobile) {
+          h3 {
+            text-transform: none;
+            text-align: left;
+            font: 600 2.75em/1.333 "Overpass", sans-serif;
+          }
+          .four-stars {
+            margin: 15px 0 15px;
+          }
+        }
+        @include breakpoints(nav) {
+          h3 {
+            font: 600 2.25em/1.333 "Overpass", sans-serif;
+          }
+        }
+        @include breakpoints(mobile) {
+          @include span(12);
+          margin: 65px 0 0 0;
+
+          h3 {
+            font: 600 2em/1.333 "Overpass", sans-serif;
+          }
+        }
+      }
+    }
+  }
+}
+
+#army-roadmap-masthead {
+  @each $img in $roadmap_bg {
+    $i: index($roadmap_bg, $img);
+    @include quotes($i) {
+      background: url($img) no-repeat center/cover;
+    }
+  }
+
+  position: relative;
+  background-size: cover;
+  padding-bottom: 100px;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-left: 50vw solid #fff;
+    border-right: 50vw solid #fff;
+    border-top: 100px solid transparent;
+  }
+
+  .container {
+    .col {
+      @include span(10);
+      @include offset(1);
+
+      border-top: 1px solid rgba(255, 255, 255, 0.85);
+      padding-top: 50px;
+
+      h2,
+      p {
+        text-align: center;
+      }
+
+      h2 {
+        color: map-get($army-branding, gold);
+        font-size: 50px;
+      }
+
+      p {
+        color: #fff;
+        font-size: 16px;
+        text-transform: uppercase;
+        margin: 20px 0 40px;
+      }
+
+      img {
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+}
+
+#army-roadmap {
+  .row {
+    &:not(:first-of-type) {
+      border-top: 1px solid map-get($army-branding, grey20);
+      margin-top: 50px;
+      padding-top: 50px;
+    }
+
+    .row-title {
+      margin-bottom: 2.5em;
+
+      @include breakpoints(really_big large desktop sm_desktop){
+        padding-left: 15px;
+      }
+      h5 {
+        font-size: 1.5em;
+        font-weight: 600;
+        text-transform: none;
+      }
+      h6 {
+        font-size: 1.15em;
+        font-style: italic;
+      }
+      @include breakpoints(lg_tablet tablet nav mobile) {
+        h5,
+        h6 {
+          text-align: center;
+        }
+      }
+    }
+
+    .left,
+    .right {
+      .link {
+        text-decoration: none;
+        font-weight: 400;
+        color: $input-focus;
+        border-bottom: 1px solid #ccc;
+        &:hover,
+        &:focus,
+        &:active {
+          text-decoration: none;
+          color: $input-focus-dark;
+          border-bottom-color: $input-focus-dark;
+        }
+      }
+      @include breakpoints(really_big large desktop sm_desktop) {
+        @include span(6, 30px);
+        .mobile {
+          display: none;
+        }
+      }
+      @include breakpoints(lg_tablet tablet nav mobile) {
+        @include span(12);
+        .desktop {
+          display: none;
+        }
+
+        .mobile,
+        .road {
+          margin-top: 20px;
+        }
+      }
+
+      #videoPlayer {
+        margin-bottom: 20px;
+
+      }
+
+      .information {
+        margin: 40px 0 30px;
+        p {
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          justify-content: left;
+          -webkit-box-align: baseline;
+          -moz-box-align: baseline;
+          -ms-flex-align: baseline;
+          -webkit-align-items: baseline;
+          align-items: baseline;
+          margin-bottom: 0;
+
+          i {
+            &.fa {
+              padding-right: 1.5em;
+            }
+          }
+        }
+      }
+
+      .standtos {
+        margin: 0 0 30px;
+        ul {
+          li {
+            a {
+              font-weight: 400;
+              &:hover,
+              &:focus,
+              &:active {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+
+      @include bodytext-blockquote();
+
+      .desktop,
+      .mobile {
+        .roadmap-img {
+          &.img6 {
+            margin-bottom: 2em;
+          }
+        }
+        .posture-archives {
+          overflow: hidden;
+          border: 1px solid $quote-text;
+          border-radius: 10px;
+          max-height: 500px;
+          @include breakpoints(really_big large desktop sm_desktop) {
+            max-width: 461px;
+          }
+
+          label {
+            padding: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1;
+            display: block;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            .fa {
+              float: right;
+            }
+          }
+
+          input[type="checkbox"] {
+            display: none;
+          }
+
+          > div {
+            max-height: 0;
+            -webkit-transition: max-height 0.5s ease, padding 0.5s ease;
+            -moz-transition: max-height 0.5s ease, padding 0.5s ease;
+            -o-transition: max-height 0.5s ease, padding 0.5s ease;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+          }
+
+          ul {
+            border-top: 1px solid $quote-text;
+            overflow-y: scroll;
+            max-height: 450px;
+
+            // @include breakpoints(lg_tablet tablet nav mobile) {
+            //   padding-top: 10px;
+            // }
+            li {
+              &:hover,
+              &:active,
+              &:focus {
+                background-color: $posture-hover;
+              }
+              @include breakpoints(really_big large desktop sm_desktop) {
+                // border-bottom: 1px solid $quote-text;
+              }
+              @include breakpoints(lg_tablet tablet nav mobile) {
+                padding: 5px 0;
+                &:last-child {
+                  padding-bottom: 10px;
+                }
+              }
+              a {
+                &:hover,
+                &:active,
+                &:focus {
+                  text-decoration: none;
+                  .view-btn {
+                    display: block;
+                    .btn {
+                      background-color: #fff;
+                      border-radius: 5px;
+                      font-size: 10px;
+                      padding: 4px 6px;
+
+                      &:hover,
+                      &:focus,
+                      &:active {
+                        cursor: pointer;
+                      }
+                    }
+                  }
+                }
+                .view-btn {
+                  display: none;
+                }
+                &.ps-link {
+                  display: flex;
+                  justify-content: space-between;
+                  font-size: 14px;
+                }
+
+                @include breakpoints(really_big large desktop sm_desktop) {
+                  padding: 10px 20px 10px;
+                }
+                @include breakpoints(lg_tablet tablet nav mobile) {
+                  padding: 0px 20px;
+                }
+              }
+            }
+          }
+
+          input[type="checkbox"]:checked ~ div {
+            max-height: 100%;
+            padding-bottom: 1.8em;
+          }
+          input[type="checkbox"]:checked ~ label i {
+            -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .roadmap-img {
+        display: block;
+        @include breakpoints(really_big large desktop sm_desktop) {
+          max-width: 461px;
+        }
+        @include breakpoints(lg_tablet tablet nav mobile) {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .right {
+      & > .roadmap-img {
+        margin-top: 20px;
+        &.img7 {
+          margin-bottom: 2em;
+        }
+      }
+      .mobile {
+        .posture-archives, .roadmap-img {
+          @include breakpoints(mobile nav tablet lg_tablet) {
+            display: none;
+          }
+        }
+      }
+      .posture-archives {
+        overflow: hidden;
+        border: 1px solid $quote-text;
+        border-radius: 10px;
+        max-height: 500px;
+        @include breakpoints(really_big large desktop sm_desktop) {
+          max-width: 461px;
+        }
+
+        label {
+          padding: 20px;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1;
+          display: block;
+          text-transform: uppercase;
+          cursor: pointer;
+
+          .fa {
+            float: right;
+          }
+        }
+
+        input[type="checkbox"] {
+          display: none;
+        }
+
+        > div {
+          max-height: 0;
+          -webkit-transition: max-height 0.5s ease, padding 0.5s ease;
+          -moz-transition: max-height 0.5s ease, padding 0.5s ease;
+          -o-transition: max-height 0.5s ease, padding 0.5s ease;
+          transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+
+        ul {
+          border-top: 1px solid $quote-text;
+          overflow-y: scroll;
+          max-height: 450px;
+
+          // @include breakpoints(lg_tablet tablet nav mobile) {
+          //   padding-top: 10px;
+          // }
+          li {
+            &:hover,
+            &:active,
+            &:focus {
+              background-color: $posture-hover;
+            }
+            @include breakpoints(really_big large desktop sm_desktop) {
+              // border-bottom: 1px solid $quote-text;
+            }
+            @include breakpoints(lg_tablet tablet nav mobile) {
+              padding: 5px 0;
+              &:last-child {
+                padding-bottom: 10px;
+              }
+            }
+            a {
+              &:hover,
+              &:active,
+              &:focus {
+                text-decoration: none;
+                .view-btn {
+                  display: block;
+                  .btn {
+                    background-color: #fff;
+                    border-radius: 5px;
+                    font-size: 10px;
+                    padding: 4px 6px;
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+              .view-btn {
+                display: none;
+              }
+              &.ps-link {
+                display: flex;
+                justify-content: space-between;
+                font-size: 14px;
+              }
+
+              @include breakpoints(really_big large desktop sm_desktop) {
+                padding: 10px 20px 10px;
+              }
+              @include breakpoints(lg_tablet tablet nav mobile) {
+                padding: 0px 20px;
+              }
+            }
+          }
+        }
+
+        input[type="checkbox"]:checked ~ div {
+          max-height: 100%;
+          padding-bottom: 1.8em;
+        }
+        input[type="checkbox"]:checked ~ label i {
+          -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

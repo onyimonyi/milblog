@@ -1,0 +1,86 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="apple-itunes-app" content="app-id=342689843">
+    <meta property="og:title" content="The Official Home Page of the United States Army">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+          content="The latest news, images, videos, career information, and links from the U.S. Army.">
+    <meta property="og:image" content="https://api.army.mil/e2/c/images/2021/06/14/6950cd24/size2.jpg">
+    <meta property="og:twitter:card" content="summary_large_image">
+    <meta property="og:twitter:site" content="@USArmy">
+    <meta property="og:twitter:title" content="The Official Home Page of the United States Army">
+    <meta property="og:twitter:description"
+          content="The latest news, images, videos, career information, and links from the U.S. Army.">
+    <meta property="og:twitter:image" content="https://api.army.mil/e2/c/images/2021/06/14/6950cd24/size2.jpg">
+
+    <title>The Official Home Page of the United States Army</title>
+    <meta name="description"
+          content="The latest news, images, videos, career information, and links from the U.S. Army">
+    <meta name="keywords"
+          content="united states army, army, us army, usarmy, army.mil, army news, army home page, army public affairs">
+    <meta name="google-site-verification" content="B37UIocMPk5H2dDE3VKm-NOPvTJaLErF-mFsdEzQN0g">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'e2/images/rv7/army_star_icon_60.png' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/sayts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/privacy.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'my/css/contacte24fe24f.css' %}">
+
+    <script type="text/javascript" src="{% static 'assets/sayts_loader.js' %}"></script>
+
+
+    <script type="text/javascript" src="{% static 'assets/sayts_loader_lib.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/analistic.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'js/privacy.js' %}"></script>
+
+
+    <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+    <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'e2/images/rv7/army_star_icon_60.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{% static 'e2/images/rv7/army_star_icon_152.png' %}">
+
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="76x76"
+          href="{% static 'e2/images/rv7/army_star_icon_76.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="120x120"
+          href="{% static 'e2/images/rv7/army_star_icon_120.png' %}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="152x152"
+          href="{% static 'e2/images/rv7/army_star_icon_152.png' %}">
+    <script async="" src="{% static 'www.google-analytics.com/analytics.js' %}"></script>
+    <script type="text/javascript" src="{% static 'https://search.usa.gov/assets/sayt_loader.js' %}"></script>
+    <link type="text/css" href="{% static 'search.usa.gov/assets/sayt.css' %}" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="{% static 'search.usa.gov/assets/sayt_loader_libs.js' %}"></script>
+</head>
+<body>
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}" role="alert">
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+
+{% block content %}
+replace me
+{% endblock %}
+
+{% block extra_body %}
+{% endblock %}
+
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+<header>
+    <div class="navbar">
+        <div class="navbar-container">
+            <a href="javascript:;" class="nav-button menu-button" aria-expanded="false" role="button">
+                <span>MENU</span>
+            </a>
+            <a  class="nav-army-star">
+                <span>HOME</span>
+            </a>
+            <a href="javascript:;" class="nav-button search-button" aria-expanded="false" role="button">
+                <span>SEARCH</span>
+            </a>
+        </div>
+    </div>
+    <div class="nav-window menu-window">
+        <div class="menu-container">
+            <div class="list-container">
+                <ul role="menu">
+                    <li>
+                        <input type="checkbox" id="menu-item-about"/>
+                        <label for="menu-item-about" role="menuitem">ABOUT<span></span></label>
+                        <ul>
+                            <li><a href="{% url 'military:home-view' %}">Who We Are</a></li>
+                            <li><a href="{% url 'military:contact' %}">Organization</a></li>
+                            <li><a href="{% url 'military:home-view' %}">Soldier and Family Resources</a></li>
+                            <li><a href="{% url 'military:home-view' %}">Army A-Z</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="menu-item-news"/>
+                        <label for="menu-item-news" role="menuitem">NEWS<span></span></label>
+                        <ul>
+                            <li><a href="{% url 'military:home-view' %}">Army Worldwide</a></li>
+                            <li><a href="{% url 'military:home-view' %}">Press Releases</a></li>
+                            <li><a href="{% url 'military:home-view' %}">Soldier Features</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="menu-item-media"/>
+                        <label for="menu-item-media" role="menuitem">MEDIA<span></span></label>
+                        <ul>
+                            <li><a href="{% url 'military:home-view' %}">Photos</a></li>
+                            <li><a href="{% url 'military:home-view' %}">Publications</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul role="menu">
+                    <li>
+                        <input type="checkbox" id="menu-item-leaders"/>
+                        <label for="menu-item-leaders" role="menuitem">LEADERS<span></span></label>
+                        <ul>
+                            <li><a href="{% url 'military:contact' %}">Secretary</a></li>
+                            <li><a href="{% url 'military:contact' %}">Under Secretary</a></li>
+                            <li><a href="{% url 'military:contact' %}">Chief of Staff</a></li>
+                            <li><a href="{% url 'military:contact' %}">Vice Chief of Staff</a></li>
+                            <li><a href="{% url 'military:contact' %}">Sergeant Major of the Army</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="menu-item-features"/>
+                        <label for="menu-item-features" role="menuitem">FEATURES<span></span></label>
+                        <ul>
+                            <li><a href="{% url 'military:home-view' %}">Valor</a></li>
+                            <li><a href="{% url 'military:home-view' %}">Events</a></li>
+                            <li><a href="{% url 'military:home-view' %}">Heritage</a></li>
+                            <li><a href="{% url 'military:section' %}">Army 101</a></li>
+                        </ul>
+                    </li>
+                    <li class="social">
+                        <ul>
+                            <li class="social-button facebook-button">
+                                <a rel="noopener noreferrer" target="_blank"
+                                   href="{% url 'military:home-view' %}"><span>Official U.S. Army Facebook</span></a>
+                            </li>
+                            <li class="social-button twitter-button">
+                                <a rel="noopener noreferrer" target="_blank" href="{% url 'military:home-view' %}"><span>Official U.S. Army Twitter</span></a>
+                            </li>
+                            <li class="social-button youtube-button">
+                                <a rel="noopener noreferrer" target="_blank"
+                                   href="{% url 'military:home-view' %}"><span>Official U.S. Army Youtube</span></a>
+                            </li>
+                            <li class="social-button instagram-button">
+                                <a rel="noopener noreferrer" target="_blank"
+                                   href="{% url 'military:home-view' %}"><span>Official U.S. Army Instagram</span></a>
+                            </li>
+                            <li class="social-button flickr-button">
+                                <a rel="noopener noreferrer" target="_blank"
+                                   href="{% url 'military:home-view' %}"><span>Official U.S. Army Flickr</span></a>
+                            </li>
+                            <li class="social-button linkedin-button">
+                                <a rel="noopener noreferrer" target="_blank"
+                                   href="{% url 'military:home-view' %}"><span>Official U.S. Army LinkedIn</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <ul class="quicklinks">
+                <li><a href="{% url 'military:contact' %}">CONTACT US</a></li>
+                <li><a href="{% url 'military:home-view' %}">Public Affairs</a></li>
+                <li><a href="{% url 'military:terms' %}">SOCIAL MEDIA Guide</a></li>
+                <li><a href="{% url 'military:home-view' %}">FAQs</a></li>
+                <li><a href="{% url 'military:section' %}">AKO</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="nav-window search-window">
+        <div class="search-form-container">
+            <form accept-charset="UTF-8" action="{% url 'military:contact' %}" id="search_form" method="get">
+                <div id="preload-01">
+                    <input name="utf8" type="hidden" value="&#x2713;"/>
+                    <input id="affiliate" name="affiliate" type="hidden" value="www.army.mil"/>
+                </div>
+                <label for="usagov-search-query">Search news, photos and videos on Army.mil</label>
+                <input autocomplete="off" placeholder="Search" class="usagov-search-autocomplete"
+                       id="usagov-search-query" name="query" type="text"/>
+                <input aria-label="Search" name="commit" type="submit" value="" class="search-submit-button"/>
+            </form>
+        </div>
+    </div>
+</header>
+<script src="{% static 'js/privacy_mini.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+{% include "header.html" %}
+    <div class="main contact-us-page">
+
+        <div class="page-banner parallax-image standard">
+            <div class="full-width-image">
+                <div class="overlay-effect"></div>
+                <img style="background-image:url({% static 'e2/images/rv7/banners/contact_us/1600.jpg' %}); ">
+            alt="Contact Us" style="top: -28px;"src="{% static 'images/milt/1600.jpg' %}" srcset="{% static 'e2/images/rv7/banners/contact_us/2500.jpg 2500w' %}, /e2/images/rv7/banners/contact_us/1600.jpg 1600w, /e2/images/rv7/banners/contact_us/768.jpg 768w" alt="Contact Us">
+            </div>
+            <div class="container">
+                <div class="inner-container">
+                    <div class="left-container">
+                        <h1>Contact Us</h1>
+                        <h2>Technical and Site Feedback</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="gray-intro">
+            <div class="container">
+                <div class="inner-container">
+                                        <p>We make every effort to ensure this website provides current and useful information. If you have a comment, a question, or a correction that is not covered by the scope of our <a href="//www.army.mil/faq/">Frequently Asked Questions</a>, please fill out the form below. If you have a general military question, please refer to the <a href="https://kb.defense.gov/">Department of Defense Frequently Asked Questions</a> page.</p>
+                    <p>NOTE: Contact information will only be used to respond to your inquiries, requests and comments.</p>
+                    <p><span class="army-gold">*</span> indicates a required field.</p>
+                </div>
+            </div>
+        </section>
+
+    <section class="contact-us-form">
+        <div class="container">
+            <div class="inner-container">
+                <form action="{% url 'military:contact'   %}" method="POST"> {% csrf_token %}
+                    <div class="field-block field-row">
+                        <div class="half">
+                            <label for="full_name">Full Name <span>*</span></label>
+                            {{ form.full_name }}
+                        </div>
+                        <div class="half">
+                            <label for="organization">Organization <span>*</span></label>
+                            <div>
+                                <div class="custom-select">
+                                    {{ form.organization }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="half">
+                            <label for="email">Email <span>*</span></label>
+                            {{ form.email }}
+                        </div>
+                        <div class="half">
+                            <label for="phone_number">Phone Number <span>*</span></label>
+                            {{ form.phone_number }}
+                        </div>
+                    </div>
+                    <div class="field-block">
+                        <label for="reason">Reason<span>*</span></label>
+                        <div>
+
+                            <div class="custom-select">
+                                {{ form.reason }}
+                            </div>
+
+                        </div>
+                        <div class="field-block">
+                            <label for="description">description <span>*</span></label>
+                            {{ form.description }}
+                        </div>
+                    </div>
+                    <div class="submit-form btn">
+                        <div>
+                            <input type="submit" name="submit" value="SUBMIT"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    </div>
+
+</body>
+
+{% include "footer.html" %}
+
+{% endblock %}
+
+

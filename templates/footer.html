@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+
+<footer>
+    <section id="social-id" class="social">
+        <ul>
+            <li class="social-button facebook-button">
+                <a rel="noopener noreferrer" target="_blank" href="#"><span>Official U.S. Army Facebook</span></a>
+            </li>
+            <li class="social-button twitter-button">
+                <a rel="noopener noreferrer" target="_blank" href="#"><span>Official U.S. Army Twitter</span></a>
+            </li>
+            <li class="social-button youtube-button">
+                <a rel="noopener noreferrer" target="_blank" href="#"><span>Official U.S. Army Youtube</span></a>
+            </li>
+            <li class="social-button flickr-button">
+                <a rel="noopener noreferrer" target="_blank"
+                   href="#"><span>Official U.S. Army Flickr</span></a>
+            </li>
+            <li class="social-button instagram-button">
+                <a rel="noopener noreferrer" target="_blank" href="#"><span>Official U.S. Army Instagram</span></a>
+            </li>
+        </ul>
+    </section>
+    <section class="footer-bottom">
+        <ul>
+            <li><a href="{% url 'military:home-view' %}">Home</a></li>
+            <li><a href="{% url 'military:contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'military:privacy' %}">Privacy</a></li>
+            <li><a href="{% url 'military:terms' %}">Terms Of Use</a></li>
+            <li><a href="http://dodcio.defense.gov/DoDSection508/Std_Stmt.aspx">Accessibility/Section 508</a></li>
+            <li><a href="#">FOIA</a></li>
+            <li><a href="{% url 'military:no-fear' %}">No FEAR Act</a></li>
+        </ul>
+    </section>
+</footer>
+{% endblock %}
